@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="hero-info intro-text">
+
+    <div class="blur1"></div>
+    <div class="blur2"></div>
+
+    <p>
+        طالبة بكالوريوس علوم الحاسب  
+        مهتمة بتطوير البرمجيات وتصميم الحلول التقنية  
+        أسعى لتطوير مهاراتي وبناء مشاريع عملية تعكس قدراتي
+    </p>
+
+</div>
+
+<div class="about-wrapper">
+
+    <!-- المهارات -->
+    <div class="about-block">
+
+        <h3>المهارات</h3>
+
+        <div class="slides-container skills">
+
+            <div class="about-slide about-active">Java / Python / C / C++</div>
+            <div class="about-slide">التصميم الجرافيكي</div>
+            <div class="about-slide">تنظيم الأعمال وتنسيق المحتوى</div>
+            <div class="about-slide">العمل بروح الفريق</div>
+            <div class="about-slide">تطوير الذات</div>
+
+        </div>
+
+        <button class="about-circle-btn skills-btn">←</button>
+
+    </div>
+
+    <!-- الدورات -->
+    <div class="about-block">
+
+        <h3>الدورات التدريبية</h3>
+
+        <div class="slides-container courses">
+
+            <div class="about-slide about-active">فكرة مشروع ناشئ</div>
+            <div class="about-slide">حقوق الملكية الفكرية</div>
+            <div class="about-slide">التسويق الإلكتروني</div>
+            <div class="about-slide">إدارة المنتجات</div>
+            <div class="about-slide">سلاسل الإمداد</div>
+            <div class="about-slide">دراسة الجدوى</div>
+            <div class="about-slide">التخطيط واتخاذ القرار</div>
+
+        </div>
+
+        <button class="about-circle-btn courses-btn">←</button>
+
+    </div>
+
+</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    function slider(container, btnSelector) {
+
+        const slides = document.querySelectorAll(container + " .about-slide");
+        const btn = document.querySelector(btnSelector);
+
+        let index = 0;
+
+        btn.addEventListener("click", () => {
+
+            slides[index].classList.remove("about-active");
+
+            index = (index + 1) % slides.length;
+
+            slides[index].classList.add("about-active");
+
+        });
+
+    }
+
+    slider(".skills", ".skills-btn");
+    slider(".courses", ".courses-btn");
+
+});
+</script>
+
+{% endblock %}

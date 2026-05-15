@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+
+    <div class="logo">
+        <img src="{% static 'logo.png' %}" alt="My Logo">
+    </div>
+
+    <div class="links">
+        <a href="/">الرئيسية</a>
+        <a href="/about/">عني</a>
+        <a href="/projects/">مشاريعي</a>
+        <a href="/contact/">تواصل معي</a>
+    </div>
+
+</nav>
+
+<!-- PAGE CONTENT -->
+{% block content %}{% endblock %}
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-content">
+
+        <div class="contact">
+            <a href="mailto:mysmabdullah@gmail.com">mysmabdullah@gmail.com</a>
+            <a href="tel:+966597018195">+966 597018195</a>
+        </div>
+
+        <span>© 2026 My Portfolio</span>
+
+    </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const sliders = document.querySelectorAll(".image-slider");
+
+    sliders.forEach(slider => {
+
+        const images = slider.querySelectorAll("img");
+        let index = 0;
+
+        setInterval(() => {
+
+            images.forEach(img => img.classList.remove("active"));
+
+            index = (index + 1) % images.length;
+
+            images[index].classList.add("active");
+
+        }, 2500);
+
+    });
+
+});
+document.addEventListener("DOMContentLoaded", function () {
+
+    const slides = document.querySelectorAll(".about-slide");
+    const btn = document.querySelector(".about-circle-btn");
+
+    let index = 0;
+
+    btn.addEventListener("click", () => {
+
+        slides[index].classList.remove("about-active");
+
+        index = (index + 1) % slides.length;
+
+        slides[index].classList.add("about-active");
+
+    });
+
+});
+</script>
+
+</body>
+</html>

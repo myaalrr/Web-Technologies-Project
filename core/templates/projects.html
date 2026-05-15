@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="hero">
+
+    <div class="blur1"></div>
+    <div class="blur2"></div>
+
+    <h1 class="main-title">
+        المشاريع والأعمال السابقة
+    </h1>
+
+    <div class="hero-info">
+        <p>
+            مجموعة من الأعمال الإبداعية والأكاديمية التي تعكس مهاراتي في التصميم والبرمجة
+        </p>
+    </div>
+
+</section>
+
+<div class="container">
+
+    <div class="grid">
+
+        <!-- 🎨 التصميم -->
+        <div class="box">
+
+            <div class="image-slider">
+
+    <img class="active" src="{% static 'images/design2.png' %}">
+    <img src="{% static 'images/design3.png' %}">
+    <img src="{% static 'images/design4.png' %}">
+    <img src="{% static 'images/design5.png' %}">
+
+</div>
+
+            <h3>تصاميم إبداعية</h3>
+
+            <p>
+                بطاقات، منشورات، شعارات وهوية بصرية لحسابات ومنصات مختلفة
+            </p>
+
+            <a href="https://www.behance.net/67logodesign/appreciated" target="_blank">
+                عرض الأعمال
+            </a>
+
+        </div>
+
+        <!-- 🎓 الأكاديمي -->
+        <div class="box">
+
+            <div class="image-slider slides">
+                <img src="{% static 'images/cs1.png' %}">
+                <img src="{% static 'images/cs2.png' %}">
+                <img src="{% static 'images/cs3.png' %}">
+            </div>
+
+            <h3>مشاريع أكاديمية</h3>
+
+            <p>
+                مشاريع دراسية جماعية متعددة شملت تحليل المشكلات وتصميم وتطوير حلول برمجية باستخدام لغات وتقنيات برمجية متنوعة
+            </p>
+
+            <a href="https://github.com/USERNAME" target="_blank">
+                GitHub Profile
+            </a>
+
+        </div>
+
+        <!-- 🌐 تطوير الويب -->
+        <div class="box">
+
+            <div class="image-slider slides">
+                <img src="{% static 'images/web2.png' %}">
+                <img src="{% static 'images/web3.png' %}">
+            </div>
+
+            <h3>تطوير الويب</h3>
+
+            <p>
+                تصميم وتطوير واجهات مواقع إلكترونية باستخدام لغات وتقنيات الويب
+            </p>
+
+        </div>
+
+        <!-- 🎓 مشروع التخرج -->
+        <div class="box">
+
+            <div class="image-slider slides">
+                <img src="{% static 'images/graduation1.png' %}">
+            </div>
+
+            <h3>مشروع التخرج</h3>
+
+            <p>
+                مشروع ذكي لاكتشاف السلوكيات غير الطبيعية في فيديوهات المراقبة من خلال تعلم السلوك الطبيعي والتنبيه عند أي انحراف عنه، باستخدام نماذج التعلم العميق
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
